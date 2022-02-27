@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "e2777bb5-b4b7-49ee-b419-16872252e880",
+		"name": "Graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Createa a new User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n  addUser(username: \"rexstev\"\r\nfirstname: \"Rex\"\r\nlastname: \"Steve\"\r\npassword: \"rexy123\"\r\nemail: \"rexy@g.com\"\r\ntype: \"user\"){\r\n  username\r\n  firstname\r\n  lastname\r\n  password\r\n  email\r\n  type\r\n}\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": " query{\r\n  login(username:\"arunsunny\", password:\"asdfas\"){\r\n    listing_id\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n  createListing(listing_id:\"L005\",\r\n  listing_title:\"House for sale\",\r\n  description:\"Max 1000-character description\"\r\n  street:\"322 Scarborough \",\r\n  city:\"Scarborough\",\r\n  postal_code: \"M1X1J1\",\r\n\tprice: 100.00,\r\n\temail: \"contact@hilton.com\",\r\n\tusername: \"arunsunny\"){\r\n    listing_id\r\n    listing_title\r\n    city\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View All list added by admin",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Book Lisitings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n  createBooking(listing_id:\"L002\",\r\n  booking_id:\"B002\",\r\n  booking_date:\"26-02-22\"\r\n  booking_start:\"28-02-22\"\r\n  booking_end:\"02-03-22\"\r\n  username:\"jerishbovas\"){\r\n    username\r\n    booking_id\r\n    listing_id\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View By City",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
